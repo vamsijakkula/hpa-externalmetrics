@@ -33,3 +33,9 @@ for i in {1..200}; do gcloud pubsub topics publish echo --message="Autoscaling #
 kubectl get deployment pubsub
 
 kubectl describe hpa pubsub
+
+# Delete the setup 
+
+gcloud pubsub subscriptions delete echo-read
+gcloud pubsub topics delete echo
+gcloud container clusters delete pubsub-test
